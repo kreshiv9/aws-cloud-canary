@@ -9,8 +9,6 @@ This project uses native AWS services to detect credential misuse:
 ## Why I built it
 To simulate credential compromise, detect unauthorized key usage quickly, and record forensic evidence (eventName, IP, region, timestamp, userAgent) for investigation.
 
-## Architecture
-![architecture](diagrams/architecture.png)
 
 ## Components & roles
 - **CloudTrail** — captures all API calls.
@@ -32,10 +30,8 @@ Within minutes, CloudTrail logs the API call → S3 stores the log → Lambda pa
 The DynamoDB table below shows the captured record with event details such as:
 
 eventName: GetCallerIdentity
-
 eventSource: sts.amazonaws.com
-
 sourceIPAddress: (attacker’s IP)
-
 eventTime: (timestamp of call)
+
 
